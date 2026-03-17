@@ -75,3 +75,62 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+// Audio player functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const audio = document.getElementById('birthdaySong');
+    const playBtn = document.getElementById('playPauseBtn');
+    const musicIcon = document.getElementById('musicIcon');
+    const musicText = document.getElementById('musicText');
+    
+    let isPlaying = false;
+    
+    // Try to autoplay (note: most browsers block autoplay)
+    audio.play().then(() => {
+        isPlaying = true;
+        updateButton();
+    }).catch(error => {
+        console.log("Autoplay prevented. User must click play.");
+        // User will need to click the button to start
+    });
+    
+    playBtn.addEventListener('click', function() {
+        if (isPlaying) {
+            audio.pause();
+            isPlaying = false;
+        } else {
+            audio.play();
+            isPlaying = true;
+        }
+        updateButton();
+    });
+    
+    function updateButton() {
+        if (isPlaying) {
+            musicIcon.textContent = '🔊';
+            musicText.textContent = 'Pause Music';
+            playBtn.classList.add('playing');
+        } else {
+            musicIcon.textContent = '🔇';
+            musicText.textContent = 'Play Music';
+            playBtn.classList.remove('playing');
+        }
+    }
+    
+    // Optional: Auto-play when countdown reaches 0
+    const targetDate = new Date(2026, 3, 13, 0, 0, 0);
+    
+    function checkForBirthday() {
+        const now = new Date();
+        if (now >= targetDate && !isPlaying) {
+            audio.play();
+            isPlaying = true;
+            updateButton();
+        }
+    }
+
+    
+    
+    // Check every minute if it's birthday
+    setInterval(checkForBirthday, 60000);
+});
