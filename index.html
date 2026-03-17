@@ -6,6 +6,10 @@
     <title>Happy Birthday, Ate Shally! 🎂</title>
     <link rel="stylesheet" href="style.css">
 </head>
+ <button id="playPauseBtn" class="music-btn">
+     <span id="musicIcon">🔇</span>
+     <span id="musicText">Play Music</span>
+ </button>
 <body>
     <div class="hero">
         <h1 class="glow">🎉 Happy Birthday, Ate Shally! 🎉</h1>
@@ -48,7 +52,7 @@
             <img src="image/28.jpg" alt="Flowers 🌸" data-message="nigagawa natin? hahaha">
             <img src="image/29.jpg" alt="ATE" data-message="Selfieee lang">
             <img src="image/30.jpg" alt="Hug 🤗" data-message="I love youuu ate!!!">
-            <img src="image/35.jpeg" alt="Hug 🤗" data-message="I love youuu ate!!!">
+            <img src="image/35.jpeg" alt="Hug 🤗" data-message="MCDO momintsss!!">
         </div>
         <p style="text-align:center; margin-top:1rem; color:#a06586;">👇 click any photo for a secret message 👇</p>
     </section>
@@ -94,6 +98,19 @@
 
     <!-- Optional music (commented, as per original) -->
     <!-- <audio autoplay loop><source src="happy-birthday.mp3" type="audio/mpeg"></audio> -->
+     <!-- Add this near the top of your card, after title or before footer -->
+<div class="audio-player">
+    <audio id="birthdaySong" loop>
+        <source src="assets/song.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+</div>
+
+<audio id="birthdaySong" loop>
+    <source src="assets/song.mp3" type="audio/mpeg">
+    <source src="assets/song.ogg" type="audio/ogg">
+    <source src="assets/song.wav" type="audio/wav">
+</audio>
 
     <footer>made with ❤️ for Ate Shally</footer>
 
