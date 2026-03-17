@@ -1,0 +1,442 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(145deg, #f9e6b31a 0%, #cce4ff 100%);
+    color: #33333311;
+    line-height: 1.6;
+    text-align: center;
+    padding: 20px;
+}
+
+.hero {
+    min-height: 60vh;       
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.glow {
+    font-size: 3rem;
+    text-shadow: 0 0 10px #dfff6913, 0 0 20px #0a174104;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    margin: 20px 0;
+}
+
+#countdown {
+    font-size: 2rem;
+    font-weight: bold;
+    background: rgba(255,255,255,0.5);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.gallery {
+    margin: 50px 0;
+}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: 20px auto;
+}
+
+.photo-grid img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    transition: transform 0.3s;
+}
+
+.photo-grid img:hover {
+    transform: scale(1.05);
+}
+
+.message {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 30px;
+    background: rgba(255,255,255,0.8);
+    border-radius: 20px;
+    font-size: 1.3rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.signature {
+    margin-top: 20px;
+    font-style: italic;
+    color: #d44e6b04;
+}
+
+/* Balloons (simple CSS) */
+.balloons {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.balloon {
+    position: absolute;
+    bottom: -100px;
+    width: 40px;
+    height: 50px;
+    background: red;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    animation: float 20s ease-in infinite;
+}
+
+.balloon:nth-child(1) { left: 10%; background: #6bdcff; animation-duration: 7s; }
+.balloon:nth-child(2) { left: 30%; background: #feca57; animation-duration: 8s; }
+.balloon:nth-child(3) { left: 70%; background: #48dbfb; animation-duration: 9s; }
+.balloon:nth-child(4) { left: 90%; background: #ff9ff3; animation-duration: 10s; }
+
+@keyframes float {
+    0% { bottom: -100px; opacity: 1; }
+    100% { bottom: 100vh; opacity: 0; }
+}
+.wishes {
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 20px;
+    background: rgba(255, 240, 245, 0.8);
+    border-radius: 20px;
+}
+
+.wishes h2 {
+    text-align: center;
+    color: #eeeaebf3;
+    margin-bottom: 30px;
+}
+
+.wishes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.wish-card {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.wish-card:hover {
+    transform: translateY(-5px);
+}
+
+.wish-text {
+    font-size: 1.1rem;
+    line-height: 1.4;
+    margin-bottom: 10px;
+    font-style: italic;
+}
+
+.wish-author {
+    text-align: right;
+    color: #ff69b4;
+    font-weight: bold;
+}
+
+
+.special {
+    border: 2px solid gold;
+    background: #fff9e6;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+}
+
+body {
+    background: linear-gradient(145deg, #fff9f0 0%, #ffe6f01a 100%);
+    color: #2d1b3c;
+    padding: 2rem 1.5rem;
+    min-height: 100vh;
+}
+
+.hero {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    background: linear-gradient(135deg, #faf5f8, #fffefeb9);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 20px rgb(252, 243, 245);
+}
+
+.glow {
+    animation: glowPulse 3s infinite;
+}
+
+@keyframes glowPulse {
+    0% { filter: drop-shadow(0 0 5px #f8f2f3); }
+    50% { filter: drop-shadow(0 0 25px #b24592); }
+    100% { filter: drop-shadow(0 0 5px #f15f79); }
+}
+
+.subtitle { 
+    font-size: 1.4rem;
+    color: #5e3b6c;
+    margin: 1rem 0 1.5rem;
+}
+
+#countdown {
+    font-size: 1.8rem;
+    font-weight: 600;
+    background: rgba(255,255,240,0.5);
+    display: inline-block;
+    padding: 0.6rem 2rem;
+    border-radius: 60px;
+    backdrop-filter: blur(4px);
+    border: 1px solid #ffb3c6;
+}
+
+.gallery {
+    margin: 3rem 0;
+}
+
+.gallery h2 {
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #f0ebed;
+}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.photo-grid img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+    border: 3px solid white;
+}
+
+.photo-grid img:hover {
+    transform: scale(1.02) rotate(1deg);
+    box-shadow: 0 18px 30px rgba(224, 159, 192, 0.3);
+    border-color: #ffccdd;
+}
+
+.message {
+    background: rgba(255, 230, 240, 0.7);
+    backdrop-filter: blur(8px);
+    padding: 2rem;
+    border-radius: 48px 48px 48px 12px;
+    max-width: 750px;
+    margin: 3rem auto;
+    font-size: 1.25rem;
+    line-height: 1.6;
+    box-shadow: 0 20px 30px #ffd9e6;
+    border: 1px solid white;
+}
+
+.signature {
+    margin-top: 1.5rem;
+    font-style: italic;
+    font-weight: 600;
+    text-align: right;
+    color: #b82b5e;
+}
+
+.wishes-section {
+    max-width: 1100px;
+    margin: 4rem auto;
+}
+
+.wishes-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #f8f3f5;
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+
+.wish-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.8rem;
+}
+
+.wish-card {
+    background: white;
+    border-radius: 2rem 2rem 2rem 0.5rem;
+    padding: 1.8rem 1.5rem;
+    max-width: 300px;
+    min-width: 250px;
+    flex: 1 1 240px;
+    box-shadow: 0 15px 25px rgba(170, 100, 140, 0.25);
+    border: 2px solid #ffe2f0;
+    transition: 0.15s;
+    display: flex;
+    flex-direction: column;
+}
+
+.wish-card.special {
+    background: #fef0f7;
+    border: 3px solid #ebe4e7;
+    transform: scale(1.02);
+}
+
+.wish-text {
+    font-size: 1.2rem;
+    font-style: italic;
+    color: #35223e;
+    flex-grow: 1;
+}
+
+.wish-author {
+    margin-top: 1rem;
+    font-weight: 700;
+    color: #c14474;
+    text-align: right;
+}
+
+.wish-photo {
+    margin-top: 1rem;
+    border-radius: 40px;
+    overflow: hidden;
+    max-width: 120px;
+    border: 3px solid #ffbfd5;
+}
+
+.wish-photo img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.balloons {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 3rem 0 1rem;
+    opacity: 0.7;
+}
+
+.balloon {
+    width: 40px;
+    height: 50px;
+    background: #f75c7e;
+    border-radius: 50% 50% 40% 40%;
+    box-shadow: inset -5px -8px 0 #d43f62;
+    position: relative;
+    animation: float 4s infinite;
+}
+
+.balloon::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 30px;
+    background: #a5676f;
+    bottom: -25px;
+    left: 19px;
+}
+
+.balloon:nth-child(2) {
+    background: #f9a95d;
+    animation-delay: 0.6s;
+}
+
+.balloon:nth-child(3) {
+    background: #7bccb2;
+    animation-delay: 1.2s;
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0); }
+}
+
+footer {
+    text-align: center;
+    margin: 2rem 0;
+    color: #996688;
+}
+
+
+body {
+    background: url('image/31.jpeg') no-repeat center center fixed;
+    background-size: cover;
+    /* keep other existing styles (color, padding, etc.) */
+    color: #2d1b3c;
+    padding: 2rem 1.5rem;
+    min-height: 100vh;
+}
+
+
+/* floating message bubble */
+.floating-message {
+    position: fixed;
+    background: #fff0f5;
+    color: #b14b7a;
+    padding: 10px 18px;
+    border-radius: 40px;
+    font-size: 1rem;
+    font-weight: 600;
+    box-shadow: 0 8px 20px rgba(200, 100, 150, 0.4);
+    border: 2px solid #ffb3c6;
+    pointer-events: none;  /* so clicks pass through */
+    z-index: 9999;
+    animation: floatUp 2s ease-out forwards;
+    white-space: nowrap;
+    max-width: 300px;
+    white-space: normal;
+    word-wrap: break-word;
+    text-align: center;
+}
+
+@keyframes floatUp {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+}
