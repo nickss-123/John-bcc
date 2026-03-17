@@ -188,27 +188,27 @@ body {
 
 h1 {
     font-size: 3rem;
-    font-weight: 800;
-    letter-spacing: -0.5px;
-    background: linear-gradient(135deg, #faf5f8, #fffefeb9);
+    font-weight: 1000px;
+    letter-spacing: 5px;
+    background: linear-gradient(135deg, #f5f1f477, #e7dfdfde);
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-shadow: 0 0 20px rgb(252, 243, 245);
+    -webkit-text-fill-color:white;
+    text-shadow: 1000px  rgb(14, 236, 252);
 }
 
 .glow {
-    animation: glowPulse 3s infinite;
+    animation: glowPulse 2s infinite;
 }
 
 @keyframes glowPulse {
-    0% { filter: drop-shadow(0 0 5px #f8f2f3); }
-    50% { filter: drop-shadow(0 0 25px #b24592); }
+    0% { filter: drop-shadow(0 0 5px #ffda07); }
+    50% { filter: drop-shadow(0 0 25px #eee8ec); }
     100% { filter: drop-shadow(0 0 5px #f15f79); }
 }
 
 .subtitle { 
-    font-size: 1.4rem;
-    color: #5e3b6c;
+    font-size: 2rem;
+    color: #fbfafc;
     margin: 1rem 0 1.5rem;
 }
 
@@ -439,4 +439,50 @@ body {
         opacity: 0;
         transform: translateY(-30px);
     }
+}
+
+
+/* Audio player styles */
+.audio-player {
+    text-align: center;
+    margin: 1rem 0 2rem;
+}
+
+.music-btn {
+    background: rgba(255, 215, 140, 0.2);
+    border: 2px solid #ffb469;
+    color: #ffddbb;
+    font-size: 1.2rem;
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    cursor: pointer;
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 4px 15px rgba(255, 140, 0, 0.3);
+}
+
+.music-btn:hover {
+    background: rgba(255, 180, 100, 0.3);
+    transform: scale(1.05);
+    border-color: #ffd700;
+    box-shadow: 0 0 20px #ffa726;
+}
+
+.music-btn.playing {
+    background: rgba(76, 175, 80, 0.3);
+    border-color: #4CAF50;
+}
+
+#musicIcon {
+    font-size: 1.5rem;
+}
+
+.photo-grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Shows entire image, may leave empty space */
+    background-color: #1a1f2e; /* Background color for empty space */
 }
