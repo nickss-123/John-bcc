@@ -129,16 +129,21 @@ body {
 }
 
 .nav-link {
-    color: rgba(255,255,255,0.95);
-    font-weight: 500;
-    font-size: 1rem;
-    padding-bottom: 0.25rem;
-    border-bottom: 2px solid transparent;
-    transition: var(--transition);
+    color: rgba(250, 248, 248, 0.95);
+ font-weight: 500;
+ font-size: 1rem;
+ padding-bottom: 0.25rem;
+ border-bottom: 2px solid transparent;
+ transition: var(--transition);
+ border-radius: 40px; /* Makes each button oval */
+ transition: var(--transition);
+ background: rgba(10, 10, 10, 0.384); /* Subtle background */
+ border: 1px solid rgba(255, 255, 255, 0.2);
+ display: inline-block;
 }
 
 .nav-link:hover, .nav-link.active {
-    border-bottom-color: var(--gold);
+    border-bottom-color: white;
     color: white;
 }
 
