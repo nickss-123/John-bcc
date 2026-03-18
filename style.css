@@ -289,11 +289,11 @@ body {
 .hero-title,
 .section-title {
     /* outline effect */
-    -webkit-text-stroke: 1px var(--gold);
-    text-stroke: 1px var(--gold); /* nonstandard but works in some browsers */
+    -webkit-text-stroke: 1px #ffd700; /* nonstandard but works in some browsers */
+    text-stroke: 1px d#ffd700); /* nonstandard but works in some browsers */
     text-shadow:
         0 0 2px var(--deep-rose),
-        0 0 4px var(--gold),
+        0 0 4px #ffd700,
         0 0 6px var(--soft-pink);
 }
 /* ...existing code... */
