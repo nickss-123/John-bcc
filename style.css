@@ -349,7 +349,7 @@ floating-message {
     pointer-events: none;
     z-index: 10000;
     white-space: nowrap;
-    animation: floatUp 0.3s ease-out;
+    animation: floatUp 5s ease-out;
     font-family: 'Poppins', sans-serif;
 }
 .section-title 2 {
