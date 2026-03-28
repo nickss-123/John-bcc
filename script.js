@@ -96,8 +96,8 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Remove after 3 seconds
         setTimeout(() => {
-            floatDiv.remove(10000);
-        }, 10000);
+            floatDiv.remove();
+        }, 3000);
     }
 
     photos.forEach(img => {
