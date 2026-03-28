@@ -11,13 +11,30 @@
     <!-- Google Fonts for better typography -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <!-- ========== FIXED MUSIC BUTTON (same style) ========== -->
     <button id="playPauseBtn" class="music-btn">
         <span id="musicIcon">🔇</span>
         <span id="musicText">Play Music</span>
     </button>
+<body>
+    <!-- Password Modal -->
+    <div id="passwordModal" class="modal">
+        <div class="modal-content">
+            <div class="lock-icon">🔒</div>
+            <h2>Private Birthday Celebration</h2>
+            <p>Ano yung magic word?</p>
+            <input type="password" id="passwordInput" placeholder="Enter password" autocomplete="off">
+            <button id="submitBtn">Unlock</button>
+            <div id="errorMsg"></div>
+            <div class="hint">Hint: Mi amor</div>
+        </div>
+    </div>
 
+
+    <script src="script.js"></script>
+</body>
     <!-- ========== HEADER / HOME SECTION (with navigation) ========== -->
     <header class="header" id="home">
         <!-- NAVIGATION BAR (copied from wedding invitation) -->
@@ -140,6 +157,7 @@
                     <img src="image/51.jpeg" data-message="hangggkyuttttt hahhaha garo aki">
                     <img src="image/52.jpg" data-message="Grabe baaaa hahaha gutom yarn?">
                     <img src="image/53.jpg" data-message="At syempre ito di mawawala kase galing to sa espiya ko hahaha.">
+                    <img src="image/54.jpg" data-message="Happy Anniversary!!">
                 </div>
             </div>
         </section>
@@ -165,13 +183,8 @@
                         <p class="wish-author">— WALA PA</p>
                     </div>
                     <div class="wish-card special">
-                        <p class="wish-text">"Non sei solo una sorella, sei la mia migliore amica. 
-                            Sono così grata per ogni momento che trascorro con te. 
-                            Buon compleanno, sorella! Nostro Padre sa quanto spesso gli parlo di te.
-                            E non mi stancherò mai di te. Ti voglio bene, sorella mia. 
-                            Ti ho sempre voluto bene e te ne vorrò sempre. Sarò qui per te, qualunque cosa accada. 
-                            Non importa se tu non puoi fare lo stesso. Grazie, amore mio. </p>    
-                        <p class="wish-author">— (your first but always last)</p>
+                        <p class="wish-text">"You're not just my sister, you're my best friend. So grateful for every moment with you.Happy Birthday, ate labblabbbb! Our Father knows kung gaano kita kadalas binabanggit sa kanya. At hindi ako magsasawa. Ti voglio bene, sorella mia. Ti ho sempre voluto bene e te ne vorrò sempre. Sarò qui per te, qualunque cosa accada. Non importa se tu non puoi fare lo stesso. Grazie, amore mio.</p>
+                        <p class="wish-author">— Nicole (your first but always last)</p>
                     </div>
                 </div>
             </div>
@@ -183,17 +196,7 @@
                 <div class="message-card">
                     <i class="fas fa-heart message-icon"></i>
                     <h2 class="section-title">A Special Message</h2>
-                    <p class="message-text">Tesoro mio, On your special day, 
-                        I just wanted to remind you how much you mean to me. 
-                        You're the best person i've ever known, just the way you are.
-                        I'm always proud of you, take note of that! 
-                        I never regret every single moment na nakasama kita, whether in good times or bad one. 
-                        You're the greatest lesson to me in different ways. 
-                        I thank you for loving me and taking good care of me, cara mia!
-                        And Oo minsan, nag kakaroon ng tampuhan at hindi pagpapansinan pero alam ko at nagtitiwala ako na walang magbabago hanggang dulo.
-                        Nandito lang ako para sayo lagi ate! Handa akong samahan ka sa kahit ano mang season, whether you like it or not. HAHAHAHA. 
-                        Anyways, please enjoy your year:) 'coz i know it's a bit too late to say enjoy your day. HAHAHA emeeeee. Mwapss!! 
-                        I love you, Amore mio! Here's to more laughs, love, and cake! 🍰</p>
+                    <p class="message-text">Tesoro mio, On your special day, I just wanted to remind you how much you mean to me. You're the best person i've ever known, just the way you are. I'm always proud of you, take note of that! I never regret every single moment na nakasama kita, whether in good times or bad one. You're the greatest lesson to me in different ways. I thank you for loving me and taking good care of me, cara mia! And Oo minsan, nag kakaroon ng tampuhan at hindi pagpapansinan pero alam ko at nagtitiwala ako na walang magbabago hanggang dulo. Nandito lang ako para sayo lagi ate! Handa akong samahan ka sa kahit ano mang season, whether you like it or not. HAHAHAHA. Anyways, please enjoy your year:) 'coz i know it's a bit too late to say enjoy your day. HAHAHA emeeeee. Mwapss!! I love you, Amore mio! Here's to more laughs, love, and cake! 🍰</p>
                     <p class="message-signature">With all my love,<br>Nicole</p>
                 </div>
             </div>
