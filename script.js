@@ -233,3 +233,244 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+// Set your custom password here
+const CORRECT_PASSWORD = "amore mio"; // Change this to your desired password (YYYYMM format example)
+
+// Check if password has been verified in this session
+let isVerified = sessionStorage.getItem('birthdayVerified');
+
+// Elements
+const modal = document.getElementById('passwordModal');
+const mainContent = document.getElementById('mainContent');
+const passwordInput = document.getElementById('passwordInput');
+const submitBtn = document.getElementById('submitBtn');
+const errorMsg = document.getElementById('errorMsg');
+
+// If already verified in this session, show content directly
+if (isVerified === 'true') {
+    modal.style.display = 'none';
+    mainContent.classList.remove('hidden');
+    initializeBirthdayEffects();
+} else {
+    modal.style.display = 'flex';
+}
+
+// Password verification function
+function verifyPassword() {
+    const enteredPassword = passwordInput.value.trim();
+    
+    if (enteredPassword === CORRECT_PASSWORD) {
+        // Correct password
+        sessionStorage.setItem('birthdayVerified', 'true');
+        modal.style.display = 'none';
+        mainContent.classList.remove('hidden');
+        initializeBirthdayEffects();
+        
+        // Optional: Play a success sound (uncomment if you want to add sound)
+        // playSuccessSound();
+    } else {
+        // Wrong password
+        errorMsg.innerHTML = '❌ Wrong password! Please try again.';
+        passwordInput.value = '';
+        passwordInput.focus();
+        
+        // Shake animation for error
+        const modalContent = document.querySelector('.modal-content');
+        modalContent.style.animation = 'shake 0.5s ease';
+        setTimeout(() => {
+            modalContent.style.animation = '';
+        }, 500);
+    }
+}
+
+// Add shake animation for wrong password
+const style = document.createElement('style');
+style.textContent = `
+    @keyframes shake {
+        0%, 100% { transform: translateX(0); }
+        25% { transform: translateX(-10px); }
+        75% { transform: translateX(10px); }
+    }
+`;
+document.head.appendChild(style);
+
+// Event listeners
+submitBtn.addEventListener('click', verifyPassword);
+passwordInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+        verifyPassword();
+    }
+});
+
+// Focus on input when modal appears
+if (!isVerified) {
+    setTimeout(() => {
+        passwordInput.focus();
+    }, 100);
+}
+
+// Initialize birthday effects
+function initializeBirthdayEffects() {
+    // Surprise button functionality
+    const surpriseBtn = document.getElementById('surpriseBtn');
+    
+    surpriseBtn.addEventListener('click', () => {
+        createConfetti();
+        showSurpriseMessage();
+    });
+    
+    // Add floating animation to balloons
+    animateBalloons();
+    
+    // Add random floating candles effect
+    createFloatingCandles();
+}
+
+// Create confetti effect
+function createConfetti() {
+    const colors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff', '#ffa500', '#ff1493'];
+    const container = document.body;
+    
+    for (let i = 0; i < 150; i++) {
+        const confetti = document.createElement('div');
+        confetti.className = 'confetti';
+        confetti.style.left = Math.random() * window.innerWidth + 'px';
+        confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        confetti.style.width = Math.random() * 8 + 4 + 'px';
+        confetti.style.height = Math.random() * 8 + 4 + 'px';
+        confetti.style.position = 'fixed';
+        confetti.style.top = '-10px';
+        confetti.style.animationDuration = Math.random() * 2 + 1 + 's';
+        confetti.style.animationDelay = Math.random() * 0.5 + 's';
+        container.appendChild(confetti);
+        
+        // Remove confetti after animation
+        setTimeout(() => {
+            confetti.remove();
+        }, 3000);
+    }
+}
+
+// Show surprise message
+function showSurpriseMessage() {
+    const messages = [
+        "🎉 You're amazing! 🎉",
+        "🎂 Have a wonderful birthday! 🎂",
+        "🎁 Here's a virtual hug! 🤗",
+        "💝 You're the best! 💝",
+        "🌟 May all your wishes come true! 🌟",
+        "🎈 Party time! Let's celebrate! 🎈"
+    ];
+    
+    const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+    
+    const messageDiv = document.createElement('div');
+    messageDiv.textContent = randomMessage;
+    messageDiv.style.position = 'fixed';
+    messageDiv.style.top = '50%';
+    messageDiv.style.left = '50%';
+    messageDiv.style.transform = 'translate(-50%, -50%)';
+    messageDiv.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
+    messageDiv.style.color = 'white';
+    messageDiv.style.padding = '20px 40px';
+    messageDiv.style.borderRadius = '50px';
+    messageDiv.style.fontSize = '24px';
+    messageDiv.style.fontWeight = 'bold';
+    messageDiv.style.zIndex = '1000';
+    messageDiv.style.textAlign = 'center';
+    messageDiv.style.animation = 'fadeInOut 2s ease';
+    messageDiv.style.whiteSpace = 'nowrap';
+    
+    document.body.appendChild(messageDiv);
+    
+    setTimeout(() => {
+        messageDiv.remove();
+    }, 2000);
+}
+
+// Animate balloons
+function animateBalloons() {
+    const balloons = document.querySelectorAll('.balloon');
+    balloons.forEach((balloon, index) => {
+        balloon.style.animation = `float ${6 + index * 0.5}s ease-in-out infinite`;
+    });
+}
+
+// Create floating candles effect
+function createFloatingCandles() {
+    const candleEmojis = ['🕯️', '🎂', '🎈', '🎉', '🎁', '✨', '🌟'];
+    
+    setInterval(() => {
+        if (!mainContent.classList.contains('hidden')) {
+            const candle = document.createElement('div');
+            candle.textContent = candleEmojis[Math.floor(Math.random() * candleEmojis.length)];
+            candle.style.position = 'fixed';
+            candle.style.left = Math.random() * window.innerWidth + 'px';
+            candle.style.bottom = '-50px';
+            candle.style.fontSize = Math.random() * 20 + 20 + 'px';
+            candle.style.opacity = '0.7';
+            candle.style.pointerEvents = 'none';
+            candle.style.zIndex = '999';
+            candle.style.animation = 'floatUp ' + (Math.random() * 3 + 2) + 's linear forwards';
+            
+            document.body.appendChild(candle);
+            
+            setTimeout(() => {
+                candle.remove();
+            }, 5000);
+        }
+    }, 2000);
+}
+
+// Add floatUp animation
+const floatUpAnimation = document.createElement('style');
+floatUpAnimation.textContent = `
+    @keyframes floatUp {
+        from {
+            transform: translateY(0) rotate(0deg);
+            opacity: 0.7;
+        }
+        to {
+            transform: translateY(-120vh) rotate(360deg);
+            opacity: 0;
+        }
+    }
+    
+    @keyframes fadeInOut {
+        0% {
+            opacity: 0;
+            transform: translate(-50%, -50%) scale(0.5);
+        }
+        20% {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+        }
+        80% {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+        }
+        100% {
+            opacity: 0;
+            transform: translate(-50%, -50%) scale(1.5);
+        }
+    }
+`;
+document.head.appendChild(floatUpAnimation);
+
+// Prevent right-click and inspect element (optional security)
+document.addEventListener('contextmenu', (e) => {
+    if (!isVerified) {
+        e.preventDefault();
+    }
+});
+
+// Optional: Add a function to change password (for admin use)
+function changePassword(newPassword) {
+    // This would typically be done on the server-side
+    // For client-side only, you can modify the constant
+    // But note: this is not secure for production
+    console.log('Password change function - would require server-side implementation');
+}
+
+// Add a console warning for developers (optional)
+console.log('%c🔒 This website is password protected!', 'color: #ff4444; font-size: 16px; font-weight: bold;');
