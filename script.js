@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Remove after 3 seconds
         setTimeout(() => {
-            floatDiv.remove();
+            floatDiv.remove(10000);
         }, 10000);
     }
 
