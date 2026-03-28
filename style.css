@@ -337,6 +337,21 @@ body {
 }
 
 /* ========== GALLERY SECTION ========== */
+floating-message {
+    position: fixed;
+    background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    pointer-events: none;
+    z-index: 10000;
+    white-space: nowrap;
+    animation: floatUp 0.3s ease-out;
+    font-family: 'Poppins', sans-serif;
+}
 .section-title 2 {
     color:white
 }
